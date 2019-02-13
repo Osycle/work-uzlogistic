@@ -1,0 +1,72 @@
+@font-face {
+    font-family: 'Oswald';
+    src: url($path+'Oswald-Medium.eot');
+    src: url($path+'Oswald-Medium.eot?#iefix') format('embedded-opentype'),
+        url($path+'Oswald-Medium.woff2') format('woff2'),
+        url($path+'Oswald-Medium.woff') format('woff'),
+        url($path+'Oswald-Medium.ttf') format('truetype'),
+        url($path+'Oswald-Medium.svg#Oswald-Medium') format('svg');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Oswald';
+    src: url($path+'Oswald-SemiBold.eot');
+    src: url($path+'Oswald-SemiBold.eot?#iefix') format('embedded-opentype'),
+        url($path+'Oswald-SemiBold.woff2') format('woff2'),
+        url($path+'Oswald-SemiBold.woff') format('woff'),
+        url($path+'Oswald-SemiBold.ttf') format('truetype'),
+        url($path+'Oswald-SemiBold.svg#Oswald-SemiBold') format('svg');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Oswald';
+    src: url($path+'Oswald-Bold.eot');
+    src: url($path+'Oswald-Bold.eot?#iefix') format('embedded-opentype'),
+        url($path+'Oswald-Bold.woff2') format('woff2'),
+        url($path+'Oswald-Bold.woff') format('woff'),
+        url($path+'Oswald-Bold.ttf') format('truetype'),
+        url($path+'Oswald-Bold.svg#Oswald-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Oswald';
+    src: url($path+'Oswald-ExtraLight.eot');
+    src: url($path+'Oswald-ExtraLight.eot?#iefix') format('embedded-opentype'),
+        url($path+'Oswald-ExtraLight.woff2') format('woff2'),
+        url($path+'Oswald-ExtraLight.woff') format('woff'),
+        url($path+'Oswald-ExtraLight.ttf') format('truetype'),
+        url($path+'Oswald-ExtraLight.svg#Oswald-ExtraLight') format('svg');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Oswald';
+    src: url($path+'Oswald-Regular.eot');
+    src: url($path+'Oswald-Regular.eot?#iefix') format('embedded-opentype'),
+        url($path+'Oswald-Regular.woff2') format('woff2'),
+        url($path+'Oswald-Regular.woff') format('woff'),
+        url($path+'Oswald-Regular.ttf') format('truetype'),
+        url($path+'Oswald-Regular.svg#Oswald-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Oswald';
+    src: url($path+'Oswald-Light.eot');
+    src: url($path+'Oswald-Light.eot?#iefix') format('embedded-opentype'),
+        url($path+'Oswald-Light.woff2') format('woff2'),
+        url($path+'Oswald-Light.woff') format('woff'),
+        url($path+'Oswald-Light.ttf') format('truetype'),
+        url($path+'Oswald-Light.svg#Oswald-Light') format('svg');
+    font-weight: 300;
+    font-style: normal;
+}
+
