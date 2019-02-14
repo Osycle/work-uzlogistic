@@ -154,13 +154,13 @@ html{
 .flickity-btn-1{
 
 	.flickity-prev-next-button{
-		@extend .gradient-1;
 		transition: all 0.3s ease;
 		top: 50%;
 		width: 40px;
-		height: 40px;
+		height: 35px;
 		z-index:2;
 		border-radius: 0;
+		background-color: transparent;
 		&:hover, &:focus{
 			opacity: 1;
 			.arrow{
@@ -169,6 +169,15 @@ html{
 		}
 		&:active{
 			transform: translateY(-40%);
+		}
+		&:before{
+			@extend .clafclear;
+			width: 60px;
+			top: 0;
+			left: 50%;
+			height: 35px;
+			transform: matrix(1,0,-0.5,1,0,0) translateX(-50%);
+			background-color: $color-1;
 		}
 		.arrow{
 			fill: white;
@@ -182,13 +191,20 @@ html{
 			height: 100%;
 			display: flex;
 			align-items: center;
-			transform: scale(0.7);
+			transform: scale(0.5);
+		}
+		path{
+			transform: scale(0.2);
 		}
 		&.previous{
 			left: 15px;
 		}
 		&.next{
 			right: 15px;
+			path{
+				transform: scale(0.2) matrix(-1,0,0,1,0,0);
+    		transform-origin: 80px 0;
+			}
 		}
 		@media (max-width: 991px) {
 			&.previous{

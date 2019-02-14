@@ -57,17 +57,34 @@ $header-min-menu: 70px;
 }
 .header-top{
 	width: 100%;
-	background-color: rgba($color-2, 0.8);
+	background-color: rgba($color-2, 0.9);
+	font-size: 1.05em;
+	.icm-contract{
+		font-size: 23px;
+	}
+	.btn-def{
+		border-bottom: 5px solid darken($color-1, 5%);
+		&:hover{
+			border-color: darken($color-2, 5%);
+		}
+	}
 }
 .header-top-content{
 	overflow: hidden;
 	height: $header-top-height;
+	padding-bottom: 28px;
+	.header-logo{
+		padding-top: 0;
+		padding-bottom: 0;
+		width: 32%;
+		transform: translateY(14px);
+	}
 }
 .header-top, .header-bottom{
 	transform: inherit;transform: unset;
 }
 .header-bottom{
-	background-color: $color-1;
+	//background-color: $color-1;
 	color: white;
 	z-index: 1;
 	width: 100%;
@@ -75,32 +92,13 @@ $header-min-menu: 70px;
 		width: 100%;
 		height: $header-bottom-height;
 	}
-	.btn-def{
-		height: 100%;
-		width: 190px;
-		white-space: normal;
-		font-size: 1.1em;
-		box-shadow: 0 11px 16px -4px rgba($color-1, 0.5);
-		&:hover{
-			background-color: darken($color-2, 5%) !important; 
-			a{
-			}
-		}
-		a{
-			height: 100%;
-			display: flex;
-			align-items: center;
-			text-transform: uppercase;
-			font-weight: 600;
-		}
-	}
+
 }
 .header-bottom-logo{
 	padding-left: 15px;
 	padding-right: 15px;
 	text-align: right;
 	img{
-    @extend .filter-white;
     height: 50px;
 	}
 }
@@ -149,10 +147,12 @@ $header-min-menu: 70px;
 		transform-origin: 50% 0;
 	}
 	.header-bottom-logo{
-		transform: scale(0);
+		//transform: scale(0);
+		opacity: 0;
 		transition: all 0.5s ease; 	
 	}
 	.header-bottom{
+		transform: translateY(-50%);
 		.align-i-center{
 			top: 0;
 			transition: all 0.5s ease; 	
@@ -164,7 +164,8 @@ $header-min-menu: 70px;
 	}
 	&.scrolled, &.header-pages{
 		.header-bottom-logo{
-			transform: scale(1);
+			//transform: scale(1);
+			opacity: 1;
 		}
 		.header-top{
 			box-shadow: 0px 5px 20px -10px black;
@@ -174,6 +175,7 @@ $header-min-menu: 70px;
 			height: 0;
 		}
 		.header-bottom{
+			background-color: $color-2;
 			box-shadow: 0px 5px 20px -10px black;
 			.align-i-center{
 				//justify-content: center;
@@ -277,6 +279,7 @@ $header-min-menu: 70px;
 	position: relative;
 	font-weight: 600;
 	height: 100%;
+	background-color: $color-2;
 	nav{
 		white-space: nowrap;
 		height: 100%;
@@ -301,10 +304,10 @@ $header-min-menu: 70px;
     		align-items: center;
 			}
 			&.active{
-				background-color: $color-2;
+				background-color: $color-1;
 			}
 			&:hover{
-				background-color: $color-2;
+				background-color: $color-1;
 				a{
 					border-color: $color-1;
 				}
@@ -372,11 +375,16 @@ ul[class*="sub-menu"]{
 	opacity: 0;
 	font-size: 0.9em;
 	z-index: 2;
-	background-color: white;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	background-color: lighten($color-2, 4%);
 	a{
-		color: $color-gray-3;
+		color: white;
 		&:before, &:after{
 			display: none;
+		}
+		&:hover{
+			background-color: lighten($color-2, 10%);
 		}
 	}
 }

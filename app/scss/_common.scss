@@ -562,6 +562,25 @@ table {
 	}
 
 }
+.btn-style-2{
+	&:before{
+		@extend .clafclear;
+		transition: all 0.3s ease;
+		background-color: $color-1;
+		left: 0;
+		transform: matrix(1,0,-0.5,1,0,0);
+		border-bottom: 5px solid lighten($color-1, 5%);
+	}
+	&, &:hover{
+		background-color: transparent !important;
+	}
+	&:hover{
+		&:before{
+			border-color: lighten($color-2, 5%);
+			background-color: $color-2;
+		}
+	}
+}
 
 
 
@@ -865,16 +884,7 @@ h1, h2, h3, h4{
 h1{
 	font-size: em(30, 15);
 	margin-bottom: 15px;
-	font-weight: 700;
-	@media (min-width: 992px) {
-		&:not(.border-none){
-			border-left: 2px solid $color-1;
-			padding-left: 15px;
-		}
-	}
-	@media (max-width: 430px) {
-		font-size: em(33/1.2, 15);
-	}
+	font-weight: 600;
 }
 h2{
 	font-size: em(25, 15);

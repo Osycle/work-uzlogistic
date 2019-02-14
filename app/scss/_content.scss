@@ -9,6 +9,31 @@
 	display: inline-block;
 	vertical-align: middle;
 }
+.advantage-1{
+	background-image: url('../img/icons/advantage-1.png');
+	width: 50px;
+	height: 50px;
+}
+.advantage-2{
+	background-image: url('../img/icons/advantage-2.png');
+	width: 50px;
+	height: 49px;
+}
+.advantage-3{
+	background-image: url('../img/icons/advantage-3.png');
+	width: 50px;
+	height: 50px;
+}
+.advantage-4{
+	background-image: url('../img/icons/advantage-4.png');
+	width: 50px;
+	height: 39px;
+}
+.advantage-5{
+	background-image: url('../img/icons/advantage-5.png');
+	width: 50px;
+	height: 49px;
+}
 
 
 .fa-star{
@@ -25,10 +50,7 @@
 		background-size: cover;
 		
 	}
-	.bg-shadow{
-		background-color: $color-1;
-		opacity: 0.65;
-	}
+
 	h1{
 		padding-left: 15px;
 		border-left: 5px solid;
@@ -88,12 +110,14 @@
 .bnr-slider{
 	position: relative;
 	overflow: hidden;
-	@media (min-width: 992px) {
-		figure{
-			opacity: 0.3;
-			transition: 0.2s;
-			&:hover{
-				opacity: 1;
+	.carousel-items{
+		@media (min-width: 992px) {
+			figure{
+				opacity: 0.3;
+				transition: 0.2s;
+				&:hover{
+					opacity: 1;
+				}
 			}
 		}
 	}	
@@ -119,7 +143,8 @@
 	position: relative;
 	background-size: cover;
 	background-position: center center;
-	figure{
+
+	.carousel-items figure{
 		overflow: hidden;
 		height: $slider-height;
 		transition: all 1.8s ease;
@@ -154,6 +179,7 @@
 		transition: 1s ease;
 	}
 	h1{
+		font-size: em(80, 16);
 		border-left: 0;
 		padding-left: 0;
 		transform: translateY(-20px);
@@ -164,24 +190,20 @@
 	p, img{
 		transform: translateY(20px);	
 	}
-
+	p{
+		font-family: $font-family-2;
+	}
 	.text-content{
 		position: relative;
 		.wrapper{
-			@extend .gradient-1;
-			padding: 40px;
-			&:before, &:after{
-				z-index: -1;
+			&:before{
 				@extend .clafclear;
+				pointer-events: none;
 				background-color: $color-1;
-				width: 150px;
-				height: 150px;
-				transform: translate(-50px, -50px);
-			}
-			&:after{
-				left: auto;
-				right: 0;
-				transform: translate(10px, -100px);	
+				width: 50px;
+				height: 50px;
+				clip-path: polygon(0 0, 0% 100%, 100% 0);
+				left: -10px;
 			}
 		}
 	}
@@ -204,7 +226,7 @@
     z-index: 1;
     position: absolute;
     top: auto !important;
-    bottom: 50px;
+    bottom: 200px;
     @media (max-width:991px) {
     	width: 90%;
     }
@@ -212,28 +234,24 @@
 		.flickity-prev-next-button{
 			&.previous{
 				left: auto;
-				right: 60px;
+				right: 85px;
 			}
 		}
-
-
 	}
 	.carousel-content{
 		position: relative;
 		.align-i-center{
 			height: $slider-height;
 		}
-		@media (max-width: 991px) {
-			.align-i-center{
-				height: 90vh;
-			}
+	}
+
+	@media (min-width: 991px) {
+		p{
+			width: 60%;
 		}
 	}
 	.bg-shadow{
-		background: linear-gradient(to bottom, 
-			rgba(0,0,0,0.8) 0%,
-			rgba(41,137,216,0) 50%,
-			rgba(0,0,0,0.8) 100%) !important;
+		background-color: rgba($color-2, 0.6);
 	}
 
 	//Навигация
@@ -254,6 +272,11 @@
 
 	@media (max-width: 991px) {
 		font-size: 0.9em;
+		.carousel-content{
+			.align-i-center{
+				height: 90vh;
+			}
+		}
 		figure{
 			height: calc(100vh - 70px);
 			.img{
@@ -279,51 +302,42 @@
 
 
 
-// content
-.btn-download{
-	font-size: 30px;
-	height: 30px;
-	color: $color-1;
-	.icm-download-button{
-		
-	}
+//advantages
+.advantages{
+	z-index: 121;
+  @extend .trans-h-center;
+	position: absolute;
+  bottom: 0 !important;
+  pointer-events: none;
+  height: 130px;
+  color: white;
 }
-.gray-line{
-	margin: 30px 0;
-	display: flex;
-	align-items: flex-end;
-	h1{
-		margin-bottom: 0;
-		line-height: 100%;
-		white-space: nowrap;
+.advantages-items{
+	.wrapper{
+		display: flex;
+		align-items: center;
 	}
-	.line{
-		margin-left: 15px;
+	.img-content{
 		margin-right: 15px;
-		background-color: rgba($color-gray-1, 0.5);
-		height: 2px;
-		width: 100%;
-	}
-	@media (max-width: 991px) {
-		margin: 0;
-		margin-top: 15px;
-		flex-direction: column;
-		justify-content: center;
-		*{
-			
-		}
-		.align-center{
-			justify-content: center;
-		}
-		h1, .link-download, .line{
-			width: 100%;
-			margin: 15px 0;
-		}
-		.line{
-
-		}
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// content
 //short-productions
 .short-productions{
 	overflow: hidden;
@@ -527,13 +541,7 @@
 	}
 
 }
-.icm-placeholder-on-map-paper-in-perspective{ font-size: 75px; }
-.icm-delivery-truck-with-circular-clock{ font-size: 86px; }
-.icm-hours-support{ font-size: 79px; }
-.icm-trophy-cup-silhouette{ font-size: 62px; }
-.icm-d-printer2{ font-size: 63px; }
-.icm-product{ font-size: 54px; }
-.icm-like{ font-size: 59px; }
+
 
 
 //short-partners
