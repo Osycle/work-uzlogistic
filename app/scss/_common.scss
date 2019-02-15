@@ -6,7 +6,7 @@
 
 $color-1: #00a947 !default;
 $color-2: #05244a !default;
-$color-3: darken(#c20007, 5%) !default;
+$color-3: #093872 !default;
 $color-4: #e17b31 !default;
 $color-5: #65a328 !default;
 $color-special-1: #2e1c11;
@@ -530,6 +530,7 @@ table {
 	white-space: nowrap;
 	text-align: center;	
 	text-transform: uppercase;
+	position: relative;
 	font-family: $font-family-1;
 	&.text-wrap{
 		white-space: wrap;
@@ -571,12 +572,19 @@ table {
 		transform: matrix(1,0,-0.5,1,0,0);
 		border-bottom: 5px solid lighten($color-1, 5%);
 	}
-	&, &:hover{
+	&, &:hover, &:active{
 		background-color: transparent !important;
+	}
+	&:active{
+		box-shadow: none;
+		&:before{
+			//box-shadow: inset 0 0 18px 0px black;
+			box-shadow: inset 0px 0px 18px 0px lighten($color-1, 10%);
+		}
 	}
 	&:hover{
 		&:before{
-			border-color: lighten($color-2, 5%);
+			border-color: lighten($color-2, 10%);
 			background-color: $color-2;
 		}
 	}
@@ -882,9 +890,9 @@ h1, h2, h3, h4{
 	position: relative;	
 }
 h1{
-	font-size: em(30, 15);
+	font-size: em(60, 15);
 	margin-bottom: 15px;
-	font-weight: 600;
+	font-weight: 400;
 }
 h2{
 	font-size: em(25, 15);
