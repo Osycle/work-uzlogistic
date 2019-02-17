@@ -12,6 +12,9 @@
 			AOS.init({
 				offset: 100,
 				once: true,
+				//mirror: false,
+				//disableMutationObserver : true,
+				//useClassNames :  true,
 				duration: 1100,
 				delay: 150
 			});
@@ -109,7 +112,61 @@
 
 
 
+	//VERTICAL CAROUSEL
+	var jcarouselWrapper = $('.jcarousel-wrapper') || null;
+	if (jcarouselWrapper)
+		for( var i =  0; i < jcarouselWrapper.length; i++ ){
+			
+			jcarouselWrapper.eq(i).find(".jcarousel")
+				.jcarousel({
+		      vertical: checkSm() ? true : true,
+		      wrap: 'both',
+		       animation: {
+			        duration: 600,
+			        easing:   'linear',
+			        complete: function() {
+			        }
+			    },
+		      center: false
+		    })
+				.on('jcarousel:targetin', 'figure', function( event, carousel ) {
+				    $(this).addClass('active');
+				})
+				.on('jcarousel:targetout', 'figure', function( event, carousel ) {
+						$(this).removeClass('active');
+				})
 
+				jcarouselWrapper.eq(i).find(".jcarousel").jcarousel('scroll', '0');
+				jcarouselWrapper.eq(i).find(".jcarousel").jcarousel('fullyvisible');
+
+
+			// CONTROLS
+			var prevNext = jcarouselWrapper.eq(i).find(".jcarousel-prev-next");
+
+			//prev
+			prevNext.find(".jcarousel-control-prev")
+			  .on('jcarouselcontrol:active', function() {
+	          $(this).removeClass('inactive');
+	      })
+	      .on('jcarouselcontrol:inactive', function() {
+	          $(this).addClass('inactive');
+	      })
+	      .jcarouselControl({
+	          target: '-=1'
+	      });
+
+	     //next
+	    prevNext.find(".jcarousel-control-next")
+	      .on('jcarouselcontrol:active', function() {
+	          $(this).removeClass('inactive');
+	      })
+	      .on('jcarouselcontrol:inactive', function() {
+	          $(this).addClass('inactive');
+	      })
+	      .jcarouselControl({
+	          target: '+=1'
+	      });
+		}//:end for;
 
 
 

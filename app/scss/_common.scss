@@ -18,7 +18,7 @@ $font-family-3: "sans-serif";
 $color-scroll: $color-1;
 $color-footer: #0071BC;
 
-$color-gray-1: #d6d6d6;
+$color-gray-1: #ebebeb;
 $color-gray-2: #777777;
 $color-gray-3: #343434;
 
@@ -840,9 +840,9 @@ thined{
 	border: none;
 	padding-left: 0;
 	&:not(.h-clear):not(.after-not):after{
-		@extend .claf;
-		height: 2px;
-		width: 70px;
+		@extend .clafclear;
+		height: 5px;
+		width: 40px;
 		transition: all 0.5s ease;
 		background-color: $color-1;
 		bottom: 0;
@@ -893,9 +893,12 @@ h1{
 	font-size: em(60, 15);
 	margin-bottom: 15px;
 	font-weight: 400;
+	@media (max-width: 991px) {
+		font-size: em(30, 15);
+	}
 }
 h2{
-	font-size: em(25, 15);
+	font-size: em(24, 15);
 	margin-bottom: 15px;
 	font-weight: 700;
 	@media (max-width: 430px) {
@@ -911,7 +914,7 @@ h3{
 }
 h4{
 	font-weight: 700;
-	font-size: em(15.2, 15);
+	font-size: em(17, 15);
 }
 h5{	
 	line-height: 150%;
@@ -969,8 +972,9 @@ main{
 	p{
 		font-size: 1em;
 		//font-weight: 400;
+		font-family: $font-family-2;
 		position: relative;
-		line-height: 130%;
+		line-height: 170%;
 	}
 	ul:not([class]){
 		text-align: left;

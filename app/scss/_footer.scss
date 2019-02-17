@@ -16,7 +16,6 @@
 	background-repeat: repeat;
 	background-position-y: top;
 	//background-size: cover;
-	background-color: #efefef;
 	background-image: url('../img/bg/bg-footer.jpg');
 	&:before{
 		font-size: 150px;
@@ -133,9 +132,30 @@
 }
 
 .copy-content{
-	background-color: #191919;
+	background-color: $color-2;
+	font-family: $font-family-2;
 }
 .dev{
 	font-size: 0.9em;
+	padding: 0 !important;
+	padding-right: 50px !important;
+	a{
+		line-height: 45px;
+		position: relative;
+		z-index: 1;
+		float: right;
+		&:after{
+			@extend .clafclear;
+			left: -20px;
+			bottom: 0;
+			background-color: $color-1;
+			width: 210px;
+			height: 53px;
+			box-shadow: 0 0 20px -3px black;
+			transform: matrix(1,0,-0.5,1,0,0);
+			pointer-events: none;
+			z-index: -1;
+		}
+	}
 }
 
