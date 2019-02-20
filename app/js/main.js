@@ -272,28 +272,10 @@
 		
 
 
-	    //short-partners-carousel
-	    if ($(".short-productions-carousel .carousel-items figure").length > 1 || checkSm())
-	      $('.short-productions-carousel .carousel-items').flickity({
-	        imagesLoaded: true,
-	        autoPlay: 3000,
-	        //groupCells: 3,
-	        freeScroll: false,
-	        pauseAutoPlayOnHover: true,
-	        arrowShape: arrowStyle,
-	        initialIndex: Math.round($(".short-partners-carousel .carousel-items figure").length / 2),
-	        prevNextButtons: true,
-	        draggable: false,
-	        adaptiveHeight: false, 
-	        wrapAround: false,
-	        pageDots: !checkSm(),
-	        contain: true,
-	        percentPosition: true,
-	        cellAlign: 'center'
-	      });
+
 	    
 	    //short-partners-carousel
-	    if ($(".short-partners-carousel .carousel-items figure").length > 5 || checkSm())
+	    if ($(".short-partners-carousel .carousel-items figure").length > 1|| checkSm())
 	      $('.short-partners-carousel .carousel-items').flickity({
 	        imagesLoaded: true,
 	        autoPlay: 3000,

@@ -796,10 +796,20 @@
 }
 .short-partners-items{
 	figure, .boxes-cell{
-		.wrapper{
-			border: 1px solid $color-gray-1;
-			border-radius: 10px;
+		.img-content{
+			//border: 1px solid $color-gray-1;
+			position: relative;
 			transition: all 0.3s ease;
+			z-index: 1;
+			transform: scale(0.93);
+			&:before{
+				z-index: -1;
+				@extend .clafclear;
+				background-color: white;
+				left: 0;
+				top: 0;
+				transform: matrix(1,0,-0.2,1,0,0);
+			}
 		}
 		&:hover{
 			.wrapper{
@@ -809,6 +819,8 @@
 	}
 	.img-content{
 		padding: 15px;
+		margin-top: 15px;
+		margin-bottom: 15px;
 	}
 	.img{
 		height: 90px;
@@ -817,6 +829,15 @@
 	}
 }
 .short-partners-carousel{
+	@media (min-width: 992px) {
+		width: 650px;
+	}
+	.flickity-viewport{
+		
+		padding: 0 15px;
+	}
+	.flickity-slider{
+	}
 	.flickity-btn-1{
 		@media (max-width: 991px){
 			figure{
