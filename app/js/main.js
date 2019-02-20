@@ -179,7 +179,9 @@
 				var carousel = crs.find(".carousel-items");
 				var carouselPrevNext = $(classPrevNext).length ? $(classPrevNext) : crs.find(".carousel-prev-next");
 				var btnNext = carouselPrevNext.find(".next");
-				var btnPrev = carouselPrevNext.find(".prev");
+				var btnPrev = carouselPrevNext.find(".prev") ;
+				if( btnPrev.length == 0 )
+					btnPrev = carouselPrevNext.find(".previous") ;
 				var flkty = carousel.data("flickity");
 				var selected;
 				var that = this;
@@ -190,16 +192,16 @@
 				btnPrev.on("click", carousel, function(e) {
 					e.data.flickity("previous", true);
 				});
-				// carousel.on("select.flickity-"+i, function() {
-				//   console.log(this);
-				//   selected = $(flkty.selectedElement);
-				//   selected
-				//     .siblings()
-				//     .addBack()
-				//     .removeClass("is-next is-prev");
-				//   selected.next().addClass("is-next");
-				//   selected.prev().addClass("is-prev");
-				// });
+				carousel.on("select.flickity-"+i, function() {
+				  console.log(this);
+				  selected = $(flkty.selectedElement);
+				  selected
+				    .siblings()
+				    .addBack()
+				    .removeClass("is-next is-prev");
+				  selected.next().addClass("is-next");
+				  selected.prev().addClass("is-prev");
+				});
 			}
 			return carousel;
 		}
@@ -275,8 +277,9 @@
 
 	    
 	    //short-partners-carousel
-	    if ($(".short-partners-carousel .carousel-items figure").length > 1|| checkSm())
-	      $('.short-partners-carousel .carousel-items').flickity({
+	    if ($(".short-partners-carousel .carousel-items figure").length > 1|| checkSm()){
+
+	      var crs = $('.short-partners-carousel .carousel-items').flickity({
 	        imagesLoaded: true,
 	        autoPlay: 3000,
 	        //groupCells: 3,
@@ -293,6 +296,10 @@
 	        cellAlign: 'center',
 	        percentPosition: true
 	      });
+	      flickityPrevNext(".short-partners-carousel", ".short-partners-carousel");
+
+	    }
+
 
     	
 	    //certifications-carousel
