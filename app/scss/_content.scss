@@ -586,6 +586,9 @@
 		padding-right: 15px;
 		margin-top: 15px;
 	}
+	.date{
+		left: 15px;
+	}
 	@media (min-width: 992px) {
 		.cap-content{
 			transform: translate(-15px, -45px);
@@ -871,19 +874,6 @@
 	.flickity-viewport{	
 		overflow: visible;
 	}
-	.flickity-page-dots{
-		text-align: left;
-		.dot{
-			border: none;
-			background-color: $color-gray-2;
-			width: 30px;
-			height: 6px;
-			transform: matrix(1,0,-0.5,1,0,0);
-			&.is-selected{
-				transform: matrix(1,0,-0.5,1,0,0);	
-			}
-		}
-	}
 	.flickity-btn-1{
 		@media (max-width: 991px){
 			figure{
@@ -1133,5 +1123,114 @@
 	.short-services-items{
 		padding-top: 0;
 		padding-bottom: 0;
+	}
+}
+
+
+
+
+//news-article
+.news-other{
+	.entry-header{
+		position: relative;
+		display: flex;
+		align-items: center;
+		&>*{
+			width: 100%;
+		}
+		a{
+			text-align: right;
+		}
+		@media (max-width: 991px) {
+			a{
+				display: none;
+			}
+		}
+	}
+	.flickity-dots-1 .flickity-page-dots{
+		text-align: center;
+	}
+	.flickity-btn-1{
+		@media (max-width: 991px){
+			figure{
+				margin: 0;		
+				margin-bottom: 0;
+			}
+			.flickity-prev-next-button{
+				top: auto;
+				bottom: 0;
+				position: relative;
+				display: inline-block;
+				&.previous{
+					//margin-left: 50%;
+					transform: translateX(-10px);
+				}
+				&.next{
+					//margin-right: 50%;
+					transform: translateX(10px);
+				}
+
+			}
+		}
+		@media (min-width: 992px){
+			.flickity-prev-next-button{
+				bottom: 15px;
+				top: auto;
+				&.previous{
+					left: auto;
+					right: 80px;
+				}
+			}
+		}
+	}
+}
+.news-article-items{
+	.img{
+		height: 240px;
+		background-size: cover;
+		background-position: center;
+		position: relative;
+		@media (max-width: 991px) {
+			height: 210px;
+		}
+	}
+	.date{
+		left: 15px;
+	}
+	.cap-content{
+		color: white;
+		padding: 5px 10px;
+		background-color: $color-1;
+	}
+	.desc-content{
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+	p{
+		margin: 10px 0;
+	}
+	@media (min-width: 992px) {
+		position: static;
+	}
+}
+.short-news-carousel{
+	figure{
+		width: calc( 33.333333333% - 7.5px );
+		margin-right: 15px;
+		&:last-child{
+			margin-right: 0;
+		}
+		.cap-content{
+			transition: all 0.3s ease;
+		}
+		&.is-selected{
+			.cap-content{
+				transform: translateY(-5px);
+			}
+		}
+		@media (max-width: 991px) {
+			width: 100%;
+			margin-right: 0;
+		}
 	}
 }
