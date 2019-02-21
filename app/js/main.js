@@ -278,7 +278,6 @@
 	    
 	    //short-partners-carousel
 	    if ($(".short-partners-carousel .carousel-items figure").length > 1|| checkSm()){
-
 	      var crs = $('.short-partners-carousel .carousel-items').flickity({
 	        imagesLoaded: true,
 	        autoPlay: 3000,
@@ -296,7 +295,6 @@
 	        cellAlign: 'center',
 	        percentPosition: true
 	      });
-	      flickityPrevNext(".short-partners-carousel", ".short-partners-carousel");
 
 	    }
 

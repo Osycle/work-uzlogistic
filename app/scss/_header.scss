@@ -779,35 +779,47 @@ textarea.form-control{
 }
 
 .form-def{
-	background-color: $color-1;
-	background-image: url('../img/bg/bg-form.jpg');
-	background-size: cover;
-	border-radius: 0 45px 0 45px;
-	color: white;
+	background-color: white;
+	background-position: top right;
+	background-repeat: repeat-y;
+
+	color: black;
 	padding-right: 40px;
 	padding-left: 40px;
+	font-family: $font-family-2;
 	@media (min-width: 992px) {
-		//width: 360px;
+		background-image: url('../img/bg/bg-envelope.jpg');
+		padding-right: 80px;
+		width: 950px;
 	}
-	&:before{
-		@extend .claf;
-		border: 2px dashed white;
-		border-radius: 0 45px 0 45px;
-		transform: scale(0.96);
-		pointer-events: none;
+	h2{
+		text-transform: uppercase;
+		color: $color-1;
 	}
 	h1, h3{
 		margin-top: 0;
 		margin-bottom: 0;
 	}
+	p{
+		font-family: $font-family-2;
+	}
+
+	.select2-container{
+		width: 100% !important;
+	}
 	.fancybox-close-small{
 		top: 15px;
     right: 15px;
     &:after{
-   		font-size: 35px;
+   		font-size: 50px;
+   		color: $color-3;
+    }
+    &:hover:after{
+    	color: $color-3;	
     }
     &:focus:after{
     	outline: none;
+    	color: $color-3;
     }
 	}
 	input.feedback-control{
@@ -816,31 +828,7 @@ textarea.form-control{
 		color: black;
 		background-color: white;
 	}
-	.input-icon{
-		overflow: hidden;
-		margin-top: 5px;
-	}
-	[class*="ls-icon"]{
-		padding-left: 0 !important;
-		&:before{
-			font-size: 20px;
-			padding: 25px 15px;
-			background-color: $color-3;
-			height: 100%;
-		}
-	}
-	.btn-def{
-		color: black;
-		font-size: 19px;
-		font-weight: 600;
-		box-shadow: -1px 7px 40px -7px rgba(black, 0.6);
-		&:active{
-			box-shadow: -1px 7px 40px -7px rgba(black, 0.0);
-		}
-		&:hover{
-			background-color: white !important;
-		}
-	}
+
 }
 
 

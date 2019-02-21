@@ -38,6 +38,11 @@
 	height: 49px;
 }
 
+.icm-user-silhouette{font-size: 25px;}
+.icm-call-answer{font-size: 21px;}
+.icm-three-buildings{font-size: 30px;}
+.icm-envelope-shape{font-size: 28px;}
+.icm-calendar-with-a-clock-time-tools{font-size: 30px;}
 
 .fa-star{
 	color: $color-gray-1;
@@ -64,7 +69,11 @@
 }
 
 
-
+.article-text{
+	@media (max-width: 991px)  {
+		text-align: justify;
+	}
+}
 
 
 
@@ -761,6 +770,9 @@
 .partners-age{
 	position: absolute;
 	left: 5%;
+	@media (max-width: 991px) {
+		display: none;
+	}
 }
 .partners-age-img{
 	background-image: url('../img/other/short-partners.png');
@@ -823,7 +835,7 @@
 			transition: all 0.3s ease;
 			z-index: 1;
 			//transform: scale(0.8);
-			filter: grayscale(1) brightness(50%);
+			filter: grayscale(1) brightness(80%);
 			&:before{
 				z-index: -1;
 				@extend .clafclear;
@@ -913,28 +925,16 @@
 
 
 
-
+//short-contacts
 .short-contacts{
 	background-position: top center;
-	background-size: contain;
+	background-size: cover;
 	background-repeat: no-repeat;
-	padding-top: 160px;
+	form{
+		position: relative;
+	}
 	.entry-header{
 		position: relative;
-		.split-text{
-			color: $color-1;
-			font-weight: 600;
-		}
-		@media (min-width: 992px){
-			.split-text{
-				right: 0;
-				top: 40px;
-				position: absolute;
-			}
-			h1{
-				padding-bottom: 60px;		
-			}
-		}
 	}
 	.text-content{
 		font-family: $font-family-2;
@@ -942,12 +942,18 @@
 	@media (min-width: 992px){
 		padding: 200px 0;
 	}
+	@media (max-width: 991px){
+		background-image: none !important;
+	}
 
 }
 .short-contacts-content{
 	&:before{
 		@extend .clafclear;
 		background-color: white;
+		background-image: url('../img/bg/bg-envelope.jpg');
+		background-position: right top;
+		background-repeat: repeat-y;
 		height: 100%;
 		width: calc(100vw + 1170px / 2);
 		left: -100vw;
@@ -955,6 +961,167 @@
 		@media (max-width: 991px){
 			left: -50vw;
 			display: none;
+		}
+	}
+}
+
+.contacts-info{
+	font-family: $font-family-2;
+	text-align: left;
+	b{
+		font-weight: 900;
+	}
+	p{
+		line-height: 120%;
+	}
+	.icon-content{
+		//width: 75px;
+		float: left;
+		padding-right: 15px;
+		display: block;	
+	}
+	.icon-wrapper{
+		width: 50px;
+		height: 50px;
+		position: relative;
+		color: white;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		*{
+			position: relative;
+		}
+		&:before{
+			@extend .clafclear;
+			background-color: $color-1;
+			transform: matrix(1,0,-0.2,1,0,0);
+		}
+		@media (max-width: 991px) {
+			transform: scale(0.7);
+			transform-origin: top;
+		}
+	}
+	.icm-call-answer{
+		font-size: 27px;
+	}
+	.fa-fax{
+		font-size: 28px;
+	}
+	.fa-envelope{
+		font-size: 30px;
+	}
+	.fa-map-marker{
+		font-size: 33px;
+	}
+}
+.contacts-info-phones{
+	@media (min-width: 992px){
+		font-size: 2em;
+	}
+	p{
+		line-height: 100%;
+	}
+}
+.contacts-info-mail{
+	@media (min-width: 992px){
+		height: 65px;
+		font-size: 1.3em;
+	}
+}
+.contacts-info-location{
+	@media (min-width: 992px){
+		font-size: 1.3em;
+	}
+}
+.contacts-info-item{
+	@extend .clearfix;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+
+
+
+
+
+//bnr
+.bnr{
+	position: relative;
+	color: white;
+	.wrapper{
+		padding-top: 120px;
+		height: 410px;
+		display: flex;
+		align-items: center;
+	}
+	.bg-shadow{
+		background: linear-gradient(to top, rgba(#011734, 0.8), transparent);
+		background-color: rgba($color-3, 0.6);
+		@extend .fuller;
+	}
+	@media (max-width: 991px) {
+		.wrapper{
+			height: 210px;
+			padding-top: 0;
+		}
+	}
+}
+
+//about
+.about-gallery{
+	padding: 60px 0;
+	background-image: url('../img/bg/bg-about-gallery.png');
+	background-position: center;
+	background-repeat: no-repeat;
+	.img{
+		height: 240px;
+		background-position: center;
+		background-size: cover;
+	}
+}
+
+//contacts
+.contacts-map{
+	box-shadow: 3px 9px 50px -17px rgba(0, 0, 0, 0.35);
+}
+
+
+
+
+//partners
+.partners{
+	.article-text{
+		@media (min-width: 992px) {
+			padding-top: 80px;
+		}
+	}
+	.short-partners-items{
+		padding-left: 60px;
+		padding-right: 60px;
+		.img{
+			height: 130px;
+		}
+	}
+}
+.partners-img{
+	background-image: url('../img/other/partners-img-bg.jpg');
+	background-position: right top;
+	background-repeat: no-repeat;
+	padding: 40px;
+	img{
+		box-shadow: 0px 12px 60px -18px black;
+		//background-position: center;
+		//height: 370px;
+		//width:;
+	}
+}
+.partners-article{
+	.short-partners-items {
+		.flickity-page-dots{
+			text-align: center;
+		}
+		.img{
+			height: 130px;
 		}
 	}
 }

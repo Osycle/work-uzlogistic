@@ -197,6 +197,10 @@ html{
 */
 .breadcrumb{
 	background: transparent;
+	font-family: $font-family-2;
+	@media (min-width: 991px) {
+		padding-top: 60px;
+	}
 	&, a, .active{ 		
 		a:hover{
 			transform: translateY(-5px);
@@ -215,7 +219,7 @@ html{
 	& > li + li:before{
 		color: black;
 		//font-family: FontAwesome;
-		content: " > ";
+		content: "/";
 		font-weight: normal;
 		font-size: 1em;
 		margin:0  5px;
@@ -1061,9 +1065,7 @@ hr{
 .pie-form-control{
 	border: 1px solid rgba($color-1, 0.8);
 	//border-bottom-color: white;
-
-	background-color: white;
-	border-radius: 10px;
+	background-color: $color-gray-1;
 	&:not([class*='color-']){
 		color: inherit;
 		color: currentColor;
@@ -1073,11 +1075,29 @@ hr{
 		outline: none;
 	}
 }
-
+.input-icon-content{
+	position: relative;
+	input.pie-form-control{
+		padding-left: 75px;
+	}
+	.input-icon{
+		border: 1px solid darken($color-gray-1, 0%);
+		height: 100%;
+		width: 60px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-color: white;
+		left: 0;
+		transition: all 0.3s ease;
+		top: 0;
+		position: absolute;
+	}
+}
 input.pie-form-control{
-	height: 40px;
+	height: 50px;
 	padding: 5px 12px;
-	border-radius: 20px;
+	box-shadow: inset 1px 3px 25px -13px black;
 	border-color: $color-gray-1;
 	&[type="checkbox"]{
 		height: auto;
@@ -1087,7 +1107,11 @@ input.pie-form-control{
 		width: 100%;
 	}
 	&:focus{
-		border-color: $color-2;
+		& ~ .input-icon{
+			background-color: $color-1;
+			color: white;
+			border-color: $color-1;
+		}
 	}
 }
 textarea.pie-form-control{

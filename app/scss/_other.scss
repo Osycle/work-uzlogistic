@@ -481,13 +481,18 @@ html{
 
 
 
+.select2-container{
+	z-index: 100000;
+	font-family: $font-family-2;	
+}
 .select2-container--default{
 	.select2-selection--single{
 		//border-radius: 15px;
-		border: 1px solid $color-1;
-		background-color: transparent;
+		border: 1px solid transparent;
+		background-color: $color-gray-1;
+		box-shadow: inset 3px 3px 25px -13px rgba(black, 0.2);
 		height: 50px;		
-		border-radius: 10px;
+		border-radius: 0;
 		.select2-selection__rendered{
 			line-height: 50px;
 		}
@@ -498,11 +503,13 @@ html{
 			color: black;
 		}
 		.select2-selection__arrow {
-			background-color: $color-gray-3;
-			border-radius: 10px;
+			background-color: white;
 			width: 50px;
+			top: 0;
+			right: 0;
+			border: 1px solid $color-gray-1;
 			b{
-				border-color: white transparent transparent transparent;
+				border-color: $color-1 transparent transparent transparent;
 			}
 		}
 	}
@@ -510,7 +517,7 @@ html{
 		.select2-selection--single{
 			.select2-selection__arrow {
 				b{
-					border-color: transparent transparent white transparent;
+					border-color: transparent transparent $color-1 transparent;
 				}
 			}
 		}
