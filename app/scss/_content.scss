@@ -1234,3 +1234,9 @@
 		}
 	}
 }
+@media (min-width: 1850px) {
+	.bnr-carousel .carousel-content .align-i-center, .bnr-carousel .carousel-items figure,
+	.short-about, .short-services, .short-news, .short-partners, .short-contacts{
+		height: 100vh;
+	}
+}
