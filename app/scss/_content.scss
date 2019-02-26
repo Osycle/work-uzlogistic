@@ -74,7 +74,13 @@
 		text-align: justify;
 	}
 }
-
+.article-img{
+	@media (min-width: 992px)  {
+		.p-r-offset{
+			padding-right: 35px;
+		}
+	}
+}
 
 
 .drop-sub{

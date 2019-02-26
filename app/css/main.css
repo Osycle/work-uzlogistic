@@ -8979,6 +8979,10 @@ input.feedback-control {
   .article-text {
     text-align: justify; } }
 
+@media (min-width: 992px) {
+  .article-img .p-r-offset {
+    padding-right: 35px; } }
+
 .drop-sub {
   position: relative; }
   .drop-sub .drop-sub-box {
